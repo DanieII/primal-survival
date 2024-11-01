@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://bwptut0qak4sf"]
+
+[ext_resource type="Script" path="res://scripts/enemies/base_enemy.gd" id="1_qc2uo"]
+[ext_resource type="Texture2D" uid="uid://b7l4m7qh6yvhh" path="res://assets/sprites/enemies/Slime_Medium_Red.png" id="2_crxwt"]
+[ext_resource type="PackedScene" uid="uid://c24v2iveoqg23" path="res://scenes/enemies/movement.tscn" id="3_64v66"]
+[ext_resource type="PackedScene" uid="uid://1pbie56nq4um" path="res://scenes/common/health.tscn" id="4_r0yhu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erhc7"]
+atlas = ExtResource("2_crxwt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwwon"]
+atlas = ExtResource("2_crxwt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6pmq"]
+atlas = ExtResource("2_crxwt")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vikat"]
+atlas = ExtResource("2_crxwt")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bonum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erhc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwwon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6pmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vikat")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wsntv"]
+radius = 4.12311
+
+[node name="BigSlime" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 2
+collision_mask = 2
+platform_floor_layers = 0
+script = ExtResource("1_qc2uo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bonum")
+animation = &"moving"
+autoplay = "moving"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_wsntv")
+
+[node name="Movement" parent="." instance=ExtResource("3_64v66")]
+
+[node name="Health" parent="." instance=ExtResource("4_r0yhu")]
+health = 1000
