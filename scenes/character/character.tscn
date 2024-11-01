@@ -153,6 +153,8 @@ health = 100
 collision_layer = 2
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_annql")]
+position = Vector2(0, -138)
+scale = Vector2(2.28947, 2.96987)
 
 [node name="EnemyCollision" parent="." instance=ExtResource("6_kmg68")]
 

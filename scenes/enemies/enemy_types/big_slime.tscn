@@ -63,4 +63,4 @@ shape = SubResource("CircleShape2D_wsntv")
 [node name="Movement" parent="." instance=ExtResource("3_64v66")]
 
 [node name="Health" parent="." instance=ExtResource("4_r0yhu")]
-health = 1000
+health = 75

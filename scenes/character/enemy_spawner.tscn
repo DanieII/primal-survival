@@ -9,8 +9,8 @@ _data = {
 point_count = 5
 
 [node name="EnemySpawner" type="Path2D"]
-position = Vector2(0, -138)
-scale = Vector2(2.28947, 2.96987)
+position = Vector2(0, -130)
+scale = Vector2(-1.97307, 2.81989)
 curve = SubResource("Curve2D_wj3ry")
 script = ExtResource("1_xg0ue")
 

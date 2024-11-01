@@ -1,7 +1,7 @@
 extends Path2D
 
-const SPAWN_AREA_WIDTH = 304
-const SPAWN_AREA_HEIGHT = 384
+const SPAWN_AREA_WIDTH = 200
+const SPAWN_AREA_HEIGHT = 350
 const WORLD_MIN_POSITION = -450
 const WORLD_MAX_POSITION = 470
 var enemy_scenes: Array
