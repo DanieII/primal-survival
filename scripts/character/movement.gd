@@ -3,6 +3,7 @@ extends Node
 const SPEED = 50
 @onready var character: CharacterBody2D = get_parent()
 @onready var animated_sprite = character.get_node("AnimatedSprite2D")
+@onready var health_component = get_parent().get_node("Health")
 
 
 func _physics_process(delta: float) -> void:
@@ -22,9 +23,5 @@ func set_animation(direction):
 
 
 func move_character(direction):
-	# Don't move if dead
-	# if health <= 0:
-	# 	return
-
 	character.velocity = direction * SPEED
 	character.move_and_slide()

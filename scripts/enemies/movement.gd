@@ -2,7 +2,7 @@ extends Node
 
 const SPEED = 20
 const MIN_DISTANCE_FROM_PLAYER = 1
-@onready var character = get_node("../../Character")
+@onready var character = get_node("/root/Game/Character")
 @onready var enemy = get_parent()
 @onready var animated_sprite = enemy.get_node("AnimatedSprite2D")
 

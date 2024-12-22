@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmkeyv0yb1ghc"]
+
+[ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_3klas"]
+[ext_resource type="FontFile" uid="uid://bnmbuhjrs1y1h" path="res://assets/fonts/Kablammo-Regular.ttf" id="1_i8nks"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_px3g0"]
+font = ExtResource("1_i8nks")
+font_size = 60
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 2
+visible = false
+script = ExtResource("1_3klas")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.27451)
+
+[node name="EndText" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -135.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_px3g0")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 60.0
+offset_right = 130.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_i8nks")
+theme_override_font_sizes/font_size = 48
+text = "Restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

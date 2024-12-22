@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://dwaj6rfq20np5"]
+[gd_scene load_steps=12 format=4 uid="uid://dwaj6rfq20np5"]
 
-[ext_resource type="PackedScene" uid="uid://5ielw72bg5bs" path="res://scenes/character/character.tscn" id="1_b5key"]
+[ext_resource type="PackedScene" uid="uid://d0dbc13lkx3th" path="res://scenes/character/character.tscn" id="1_b5key"]
+[ext_resource type="Script" path="res://scripts/common/game_manager.gd" id="1_o43ad"]
 [ext_resource type="Texture2D" uid="uid://cf72ufb0gmspk" path="res://assets/sprites/tilesets/Tileset.png" id="2_cthnq"]
 [ext_resource type="Texture2D" uid="uid://cltsmjqou5nb2" path="res://assets/sprites/tilesets/Decorations.png" id="3_jwqoi"]
+[ext_resource type="PackedScene" uid="uid://dmkeyv0yb1ghc" path="res://scenes/ui/game_over.tscn" id="6_bdahr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tuc0k"]
 texture = ExtResource("2_cthnq")
@@ -292,6 +294,9 @@ sources/0 = SubResource("TileSetAtlasSource_4su5x")
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_o43ad")
+
 [node name="Map" type="Node" parent="."]
 
 [node name="Base" type="TileMapLayer" parent="Map"]
@@ -311,3 +316,5 @@ tile_set = SubResource("TileSet_t0cf4")
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 zoom = Vector2(4, 4)
+
+[node name="GameOver" parent="." instance=ExtResource("6_bdahr")]

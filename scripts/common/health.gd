@@ -19,7 +19,7 @@ func decrease_health(value):
 
 
 func indicate_damage():
-	var damaged_animation_timer = get_node("DamagedAnimationTimer")
+	var damaged_animation_timer = get_node_or_null("DamagedAnimationTimer")
 
 	if damaged_animation_timer:
 		# Restart timer

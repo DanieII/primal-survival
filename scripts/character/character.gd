@@ -4,5 +4,9 @@ const DAMAGE = 25
 @onready var health_component = get_node("Health")
 
 
+func _ready():
+	pass
+
+
 func die():
-	print("GAME OVER")
+	GameManager.game_over()
